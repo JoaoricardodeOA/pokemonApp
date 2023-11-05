@@ -5,9 +5,13 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PokeApiService {
-
+  id: number = 0;
   constructor(private httpClient:HttpClient) { }
-  getPokeApiService(id: number = Math.floor(Math.random() * 100)){
-    return this.httpClient.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
+  getPokeApiService(){
+    this.id= Math.floor(Math.random() * 100)
+    if(this.id==0){
+      this.id = 1;
+    }
+    return this.httpClient.get(`https://pokeapi.co/api/v2/pokemon/${this.id}`)
   }
 }
