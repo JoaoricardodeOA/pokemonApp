@@ -8,7 +8,7 @@ import { ViaCEPService } from '../services/via-cep.service';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-  areaBuscarPokemon:string='52011210';
+  areaBuscarPokemon:string='';
   areaBusca:any={
     bairro : '',
     localidade : '',
@@ -22,8 +22,8 @@ export class Tab1Page {
     private viaCEPService:ViaCEPService
   ){}
 
-  buscarPokemon(){
-    this.viaCEPService.getViaCEPService(this.areaBuscarPokemon)
+  buscarPokemon(areaBuscarPokemon:string){
+    this.viaCEPService.getViaCEPService(areaBuscarPokemon)
       .subscribe((value)=>{
         this.areaBusca.logradouro = JSON.parse(JSON.stringify(value))['logradouro'];
         this.areaBusca.bairro = ', '+JSON.parse(JSON.stringify(value))['bairro'];

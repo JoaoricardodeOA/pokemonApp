@@ -16,7 +16,7 @@
   <ion-card>
     <ion-card-header>
       <ion-input
-        [ngModel]="areaBuscarPokemon"
+        [(ngModel)]="areaBuscarPokemon"
         [counter]="true"
         fill="solid"
         helperText="Área para buscar por Pokemon"
@@ -26,10 +26,11 @@
         placeholder="22555888"
         type="text"
       ></ion-input>
+      
       <ion-button
         expand="block"
         fill="solid"
-        (click)="buscarPokemon()"
+        (click)="buscarPokemon(areaBuscarPokemon)"
       >
         buscar por Pokemon
         <ion-icon name="search" slot="end"></ion-icon>
