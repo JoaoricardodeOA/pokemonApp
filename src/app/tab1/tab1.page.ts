@@ -46,10 +46,5 @@ export class Tab1Page {
         this.pokemon.abilities = JSON.parse(JSON.stringify(value))['abilities'].length;
         this.pokemon.image = JSON.parse(JSON.stringify(value))['sprites'].other.dream_world.front_default;
       });
-      console.log(this.pokemon.weight +'  '+ this.pokemon.name+'  '+this.pokemon.height+'  '+this.pokemon.abilities+'  '+ this.pokemon.image);
-      
-      
-      
-    
   }
 }
