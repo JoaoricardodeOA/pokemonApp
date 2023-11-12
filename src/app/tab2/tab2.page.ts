@@ -54,11 +54,11 @@ export class Tab2Page implements OnInit{
     console.log(this.pokeApiService.lastPokemonAbility)
     console.log(this.pokeApiService.adversaryAbility)
      if(this.pokeApiService.adversaryAbility === this.pokeApiService.lastPokemonAbility){
-        this.resultado = 'empatou'
+        this.resultado = 'Empatou'
      }else if(this.pokeApiService.adversaryAbility > this.pokeApiService.lastPokemonAbility){
-        this.resultado = 'ganhou'
+        this.resultado = 'Ganhou'
      }else{
-      this.resultado = 'perdeu'
+      this.resultado = 'Perdeu'
      }
   }
 
