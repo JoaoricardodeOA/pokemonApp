@@ -17,11 +17,11 @@ export class Tab1Page implements OnInit{
     uf:''
   };
   public pokemon:any={
-    name:'bulbasaur',
-    image:'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg',
-    abilities:'2',
-    height:'7',
-    weight:'69'
+    name:'',
+    image:'',
+    abilities:'',
+    height:'',
+    weight:''
   
   }
 

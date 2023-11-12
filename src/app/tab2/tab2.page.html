@@ -19,7 +19,7 @@
         <ion-row>{{pokemonAdversary.name| uppercase}}</ion-row>
         <ion-row [ngStyle]="{'color':resultado === 'ganhou' ? 'red' : (resultado === 'perdeu'? 'green' : 'yellow' ) }">{{resultado|uppercase}}</ion-row>
         
-        <ion-img alt="" src="{{pokemonAdversary.image}}">
+        <ion-img alt="Pokemon" src="{{pokemonAdversary.image}}">
 
         </ion-img>
       </ion-card-title>

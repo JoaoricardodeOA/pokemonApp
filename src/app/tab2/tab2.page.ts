@@ -24,9 +24,7 @@ export class Tab2Page implements OnInit{
   constructor(
     private pokeApiService:PokeApiService,
     public photoService:PhotoService
-  ){
-    
-  }
+  ){ }
   ngOnInit(): void {
     this.buscarPokemon()
     this.setResultado()
