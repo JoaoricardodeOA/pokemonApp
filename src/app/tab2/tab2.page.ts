@@ -24,7 +24,6 @@ export class Tab2Page implements OnInit{
     public photoService:PhotoService
   ){ }
   ngOnInit(): void {
-    this.buscarPokemon()
   }
 
   buscarPokemon(){
@@ -42,6 +41,9 @@ export class Tab2Page implements OnInit{
         this.setResultado();
       });
   }
+  ionViewDidEnter(){
+    this.buscarPokemon()
+  }
 
   addPhotoToGallery(){
     this.photoService.addNewToGallery()
@@ -50,10 +52,13 @@ export class Tab2Page implements OnInit{
   setResultado(){
      if(this.pokeApiService.adversaryAbility === this.pokeApiService.lastPokemonAbility){
         this.resultado = 'Empatou'
+        this.pokeApiService.pokemon.empates = this.pokeApiService.pokemon.empates+1
      }else if(this.pokeApiService.adversaryAbility > this.pokeApiService.lastPokemonAbility){
         this.resultado = 'Ganhou'
+        this.pokeApiService.pokemon.derrotas = this.pokeApiService.pokemon.derrotas+1
      }else{
-      this.resultado = 'Perdeu'
+        this.resultado = 'Perdeu'
+        this.pokeApiService.pokemon.vitorias = this.pokeApiService.pokemon.vitorias+1
      }
   }
 

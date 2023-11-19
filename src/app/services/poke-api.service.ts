@@ -9,6 +9,15 @@ export class PokeApiService {
   public id: number = 0;
   public lastPokemonAbility: number = 0
   public adversaryAbility: number = 0
+  public pokemon:any ={
+      name:'',
+      image:'',
+      vitorias:'0',
+      empates:'0',
+      derrotas:'0'
+  
+    }
+  
   constructor(private httpClient: HttpClient) { }
 
   getPokeApiService() : Observable<any> {

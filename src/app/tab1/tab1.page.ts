@@ -45,8 +45,13 @@ export class Tab1Page{
         this.pokemon.height = JSON.parse(JSON.stringify(value))['height'];
         this.pokemon.abilities = JSON.parse(JSON.stringify(value))['abilities'].length;
         this.pokemon.image = JSON.parse(JSON.stringify(value))['sprites'].other.dream_world.front_default;
+        this.pokeApiService.pokemon.name = JSON.parse(JSON.stringify(value))['name'];
+        this.pokeApiService.pokemon.image = JSON.parse(JSON.stringify(value))['sprites'].other.dream_world.front_default;
         //
         this.pokeApiService.lastPokemonAbility = this.pokemon.abilities;
+        this.pokeApiService.pokemon.vitorias = 0
+        this.pokeApiService.pokemon.derrotas = 0
+        this.pokeApiService.pokemon.empates = 0
       });
   }
 }
