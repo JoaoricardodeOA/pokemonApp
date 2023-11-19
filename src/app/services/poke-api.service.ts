@@ -9,9 +9,10 @@ export class PokeApiService {
   public id: number = 0;
   public lastPokemonAbility: number = 0
   public adversaryAbility: number = 0
-  constructor(private httpClient:HttpClient){ }
-    getPokeApiService() : Observable<any> {
-    this.id= Math.floor(Math.random() * 100)
+  constructor(private httpClient: HttpClient) { }
+
+  getPokeApiService() : Observable<any> {
+    this.id = Math.floor(Math.random() * 100)
     if(this.id==0){
       this.id = 1;
     }

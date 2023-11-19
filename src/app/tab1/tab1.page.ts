@@ -8,7 +8,7 @@ import { ViaCEPService } from '../services/via-cep.service';
   styleUrls: ['tab1.page.scss']
 })
 
-export class Tab1Page implements OnInit{
+export class Tab1Page{
   areaBuscarPokemon:string='52011210';
   areaBusca:any={
     bairro : '',
@@ -22,41 +22,31 @@ export class Tab1Page implements OnInit{
     abilities:'',
     height:'',
     weight:''
-  
-  }
 
+  }
 
   constructor(
     private pokeApiService:PokeApiService,
     private viaCEPService:ViaCEPService
   ){}
-  ngOnInit(): void {
-    this.buscarPokemon(this.areaBuscarPokemon)
-  }
 
-  
-  async buscarPokemon(areaBuscarPokemon:string){
+  buscarPokemon(areaBuscarPokemon:string){
     this.viaCEPService.getViaCEPService(areaBuscarPokemon)
       .subscribe((value)=>{
         this.areaBusca.logradouro = JSON.parse(JSON.stringify(value))['logradouro'];
         this.areaBusca.bairro = ', '+JSON.parse(JSON.stringify(value))['bairro'];
         this.areaBusca.localidade = ' - '+JSON.parse(JSON.stringify(value))['localidade'];
         this.areaBusca.uf = '-'+JSON.parse(JSON.stringify(value))['uf'];
-      }); 
-      let service =  await this.pokeApiService.getPokeApiService()
-      service
-      .subscribe(value=>{
+      });
+      this.pokeApiService.getPokeApiService()
+      .subscribe((value)=>{
         this.pokemon.weight = JSON.parse(JSON.stringify(value))['weight'];
         this.pokemon.name = JSON.parse(JSON.stringify(value))['name'];
         this.pokemon.height = JSON.parse(JSON.stringify(value))['height'];
         this.pokemon.abilities = JSON.parse(JSON.stringify(value))['abilities'].length;
         this.pokemon.image = JSON.parse(JSON.stringify(value))['sprites'].other.dream_world.front_default;
-        this.pokeApiService.lastPokemonAbility = JSON.parse(JSON.stringify(value))['abilities'].length;
-        console.log(JSON.parse(JSON.stringify(value))['abilities'].length)
+        //
+        this.pokeApiService.lastPokemonAbility = this.pokemon.abilities;
       });
-      console.log(this.pokeApiService.lastPokemonAbility)
-      this.pokeApiService.lastPokemonAbility = this.pokemon.abilities
-      
-      console.log(this.pokeApiService.lastPokemonAbility)
   }
 }
