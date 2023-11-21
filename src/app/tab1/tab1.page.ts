@@ -52,6 +52,13 @@ export class Tab1Page{
         this.pokeApiService.pokemon.vitorias = 0
         this.pokeApiService.pokemon.derrotas = 0
         this.pokeApiService.pokemon.empates = 0
+        this.pokeApiService.pokemons.push({
+          name:JSON.parse(JSON.stringify(value))['name'],
+          image:JSON.parse(JSON.stringify(value))['sprites'].other.dream_world.front_default,
+          vitorias:0,
+          empates:0,
+          derrotas:0
+        })
       });
   }
 }

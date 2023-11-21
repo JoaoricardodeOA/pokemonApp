@@ -53,12 +53,15 @@ export class Tab2Page implements OnInit{
      if(this.pokeApiService.adversaryAbility === this.pokeApiService.lastPokemonAbility){
         this.resultado = 'Empatou'
         this.pokeApiService.pokemon.empates = this.pokeApiService.pokemon.empates+1
+        this.pokeApiService.pokemons[this.pokeApiService.pokemons.length-1].empates++ 
      }else if(this.pokeApiService.adversaryAbility > this.pokeApiService.lastPokemonAbility){
         this.resultado = 'Ganhou'
         this.pokeApiService.pokemon.derrotas = this.pokeApiService.pokemon.derrotas+1
+        this.pokeApiService.pokemons[this.pokeApiService.pokemons.length-1].derrotas++
      }else{
         this.resultado = 'Perdeu'
         this.pokeApiService.pokemon.vitorias = this.pokeApiService.pokemon.vitorias+1
+        this.pokeApiService.pokemons[this.pokeApiService.pokemons.length-1].vitorias++
      }
   }
 

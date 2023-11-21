@@ -15,9 +15,12 @@ export class PokeApiService {
       vitorias:'0',
       empates:'0',
       derrotas:'0'
-  
     }
-  
+    public pokemons:{ name:'',image:'',vitorias:0,empates:0,derrotas:0}[]
+    =[
+    ]
+
+
   constructor(private httpClient: HttpClient) { }
 
   getPokeApiService() : Observable<any> {

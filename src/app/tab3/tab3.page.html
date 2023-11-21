@@ -14,46 +14,24 @@
   </ion-header>
 <ion-grid>
   <ion-row>
-    <ion-col><ion-card>
+    <ion-col  *ngFor="let userpokemon of pokemons" ><ion-card>
       <ion-card-header>
         <ion-card-title>
-          <ion-row>{{pokemon1.name| uppercase}}</ion-row>
-          <ion-img alt="Pokemon" src="{{pokemon1.image}}">
+          <ion-row>{{userpokemon.name| uppercase}}</ion-row>
+          <ion-img alt="Pokemon" src="{{userpokemon.image}}">
           </ion-img>
         </ion-card-title>
       </ion-card-header>
     <ion-card-content>
       <ion-list>
         <ion-item>
-          <ion-label color="success">Vitórias: {{pokemon1.vitorias}}</ion-label>
+          <ion-label color="success">Vitórias: {{userpokemon.vitorias}}</ion-label>
         </ion-item>
         <ion-item>
-          <ion-label color="danger">Derrotas: {{pokemon1.derrotas}}</ion-label>
+          <ion-label color="danger">Derrotas: {{userpokemon.derrotas}}</ion-label>
         </ion-item>
         <ion-item>
-          <ion-label color="warning">Empates: {{pokemon1.empates}}</ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
-  </ion-card></ion-col>
-  <ion-col><ion-card>
-    <ion-card-header>
-      <ion-card-title>
-        <ion-row>{{pokemon1.name| uppercase}}</ion-row>
-        <ion-img alt="Pokemon" src="{{pokemon1.image}}">
-        </ion-img>
-      </ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-list>
-        <ion-item>
-          <ion-label color="success">Vitórias: {{pokemon1.vitorias}}</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label color="danger">Derrotas: {{pokemon1.derrotas}}</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label color="warning">Empates: {{pokemon1.empates}}</ion-label>
+          <ion-label color="warning">Empates: {{userpokemon.empates}}</ion-label>
         </ion-item>
       </ion-list>
     </ion-card-content>

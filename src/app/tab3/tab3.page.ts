@@ -23,6 +23,9 @@ export class Tab3Page implements OnInit{
     derrotas:'0'
 
   }
+  public pokemons:{ name:'',image:'',vitorias:0,empates:0
+  ,derrotas:0}[]=[]
+
 
 
   constructor(private pokeApiService:PokeApiService) {}
@@ -39,6 +42,7 @@ export class Tab3Page implements OnInit{
     this.pokemon1.vitorias = this.pokeApiService.pokemon.vitorias
     this.pokemon1.empates = this.pokeApiService.pokemon.empates
     this.pokemon1.derrotas = this.pokeApiService.pokemon.derrotas
+    this.pokemons = this.pokeApiService.pokemons
   }
   buscarPokemon(){
     this.pokeApiService.getPokeApiService()
